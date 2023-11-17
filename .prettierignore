@@ -1,0 +1,15 @@
+# Ignore node
+node_modules
+
+# Ignore directories
+
+src/assets
+public
+.husky
+
+# Ignore files
+
+README.md
+.gitignore
+.eslintrc.cjs
+.eslintrc.json
