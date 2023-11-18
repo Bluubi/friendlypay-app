@@ -9,5 +9,8 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [{ path: "", element: <Footer /> }],
   },
+  {
+    path: "new/payment",
+    element: <NewPaymentPage />,
   },
 ]);

@@ -1,0 +1,9 @@
+.control-group {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 10rem;
+}
+
+.control-group > * {
+  flex: 1 0 100%;
+}
