@@ -22,3 +22,7 @@ export const ControlGroup = ({ controls }: { controls: CONTROL[] }) => {
     </>
   );
 };
+
+export function getControlInput(selector: string) {
+  return document.querySelector(selector) as HTMLInputElement;
+}
