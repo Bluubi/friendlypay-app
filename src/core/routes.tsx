@@ -7,10 +7,12 @@ export const router = createBrowserRouter([
   {
     path: "",
     element: <App />,
-    children: [{ path: "", element: <Footer /> }],
-  },
-  {
-    path: "new/payment",
-    element: <NewPaymentPage />,
+    children: [
+      { path: "", element: <Footer /> },
+      {
+        path: "new/payment",
+        element: <NewPaymentPage />,
+      },
+    ],
   },
 ]);

@@ -1,9 +1,15 @@
 .control-group {
   display: flex;
   flex-wrap: wrap;
-  max-width: 10rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.label {
+  position: absolute;
 }
 
 .control-group > * {
   flex: 1 0 100%;
+  padding: 0.5rem;
 }
