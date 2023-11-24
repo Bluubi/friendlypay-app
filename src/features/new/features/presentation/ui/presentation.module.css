@@ -1,0 +1,10 @@
+.presentation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 0 1 25%;
+}
+
+.margin {
+  margin-top: 1rem;
+}
