@@ -9,6 +9,8 @@
 
   font-weight: 600;
 
+  text-align: center;
+
   transition: background-color 0.5s;
 }
 
@@ -42,5 +44,14 @@
   transform: rotate(135deg);
 }
 
-.secondary:target {
+.center {
+  margin: auto;
+}
+
+.size-50 {
+  width: 50%;
+}
+
+.size-25 {
+  width: 25%;
 }

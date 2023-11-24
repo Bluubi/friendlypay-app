@@ -4,7 +4,7 @@ const Props = {
   link: "new/payment",
   theme: "primary",
   align: "center",
-  size: "size-50"
+  size: "size-50",
 } as AnchorProps;
 
 export const HomeFooter = () => {

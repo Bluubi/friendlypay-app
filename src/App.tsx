@@ -1,13 +1,8 @@
-import Svg from "./shared/Svg/Svg.tsx";
 import "./App.css";
-import SVG from "./core/svg.ts";
+import { HomePage } from "./features/home/HomePage.tsx";
 
 const App = () => {
-  return (
-    <section className={"container"}>
-      <Svg src={SVG.LARRY_SHARING_PAYMENT} alt={""} />
-    </section>
-  );
+  return <HomePage />;
 };
 
 export default App;
