@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  margin: 2rem;
+}
+
+.title,
+.subtitle {
+  flex: 1 0 100%;
+}
+
+.title {
+  position: relative;
+  padding-left: 1rem;
+}
+.title::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0.3rem;
+  background-color: var(--bg-dark);
+}
+
+.subtitle {
+  margin-top: 1rem;
+}
+
+.form {
+  margin: 1rem;
+  flex: 0 0 50%;
+}
