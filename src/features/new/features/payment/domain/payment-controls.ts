@@ -1,4 +1,4 @@
-import { CONTROL } from "../../../../shared/Form/control-type.ts";
+import { CONTROL } from "../../../../../shared/Form/control-type.ts";
 
 export const PAYMENT_CONTROLS: CONTROL[] = [
   {
