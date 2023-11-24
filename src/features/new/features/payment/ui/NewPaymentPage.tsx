@@ -7,18 +7,18 @@ import {
 import { PAYMENT_CONTROLS } from "../domain/payment-controls.ts";
 import * as REACT from "react";
 import { container } from "tsyringe";
-import { NewPaymentRepository } from "../domain/new-payment-repository.ts";
+import { PaymentRepository } from "../domain/payment-repository.ts";
 import "./new-payment-page.module.css";
 import Svg from "../../../../../shared/Svg/Svg.tsx";
 import SVG from "../../../../../core/svg.ts";
+import { Outlet } from "react-router-dom";
 
 export const NewPaymentPage = () => {
   const newPayment = (event: REACT.FormEvent) => {
     event.preventDefault();
 
-    const newPaymentRepository = container.resolve<NewPaymentRepository>(
-      "NewPaymentRepository",
-    );
+    const savePaymentCmd =
+      container.resolve<PaymentRepository>("PaymentRepository");
 
     const payment = {
       owner: getControlInput('[name="owner"]').value,
@@ -26,7 +26,7 @@ export const NewPaymentPage = () => {
       activity: getControlInput('[name="activity"]').value,
     };
 
-    newPaymentRepository.execute(payment);
+    savePaymentCmd.save(payment);
   };
 
   return (
@@ -43,6 +43,8 @@ export const NewPaymentPage = () => {
           <span> Create your payment </span>
         </Button>
       </form>
+      <Outlet />
+      <div className={styles.modal}></div>
     </div>
   );
 };
