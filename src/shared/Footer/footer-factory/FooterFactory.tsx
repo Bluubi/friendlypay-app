@@ -1,5 +1,5 @@
-import { NewPaymentFooter } from "../new-payment-footer/NewPaymentFooter.tsx";
-import { GoBackFooter } from "../go-back-footer/GoBackFooter.tsx";
+import { HomeFooter } from "../new-payment-footer/HomeFooter.tsx";
+import { NewPaymentPageFooter } from "../go-back-footer/NewPaymentPageFooter.tsx";
 
 export const FooterContainerFactory = (path: string): JSX.Element => {
   console.log(path);
@@ -7,6 +7,6 @@ export const FooterContainerFactory = (path: string): JSX.Element => {
 };
 
 const FooterPresenter = new Map<string, JSX.Element>([
-  ["/", <NewPaymentFooter />],
-  ["/new/payment", <GoBackFooter />],
+  ["/", <HomeFooter />],
+  ["/new/payment", <NewPaymentPageFooter />],
 ]);

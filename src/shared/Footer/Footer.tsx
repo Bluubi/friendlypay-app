@@ -1,4 +1,4 @@
-import "./footer.css";
+import styles from "./footer.module.css";
 import { useLocation } from "react-router";
 import { FooterContainerFactory } from "./footer-factory/FooterFactory.tsx";
 
@@ -8,5 +8,5 @@ export const Footer = () => {
     return FooterContainerFactory(pathname);
   }
 
-  return <footer>{presenter()}</footer>;
+  return <footer className={styles.footer}>{presenter()}</footer>;
 };
