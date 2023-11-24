@@ -1,12 +1,11 @@
-import { Outlet } from "react-router";
-import Svg from "./features/shared/Svg/Svg.tsx";
+import Svg from "./shared/Svg/Svg.tsx";
 import "./App.css";
+import SVG from "./core/svg.ts";
 
 const App = () => {
   return (
     <section className={"container"}>
-      <Svg src={"src/assets/imgs/Larry-sharing-payment.svg"} alt={""} />
-      <Outlet />
+      <Svg src={SVG.LARRY_SHARING_PAYMENT} alt={""} />
     </section>
   );
 };

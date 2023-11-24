@@ -3,6 +3,4 @@ section[class="container"] {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
-  height: 100vh;
 }

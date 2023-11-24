@@ -1,14 +1,22 @@
-import { createBrowserRouter } from "react-router-dom";
-import { NewPaymentPage } from "../features/new/features/payment/ui/new-payment-page.tsx";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import App from "../App.tsx";
-import { Footer } from "../features/shared/Footer/Footer.tsx";
+import { NewPaymentPage } from "../features/new/features/payment/ui/NewPaymentPage.tsx";
+import { Footer } from "../shared/Footer/Footer.tsx";
 
 export const router = createBrowserRouter([
   {
     path: "",
-    element: <App />,
+    element: (
+      <>
+        <Outlet />
+        <Footer />
+      </>
+    ),
     children: [
-      { path: "", element: <Footer /> },
+      {
+        path: "",
+        element: <App />,
+      },
       {
         path: "new/payment",
         element: <NewPaymentPage />,
