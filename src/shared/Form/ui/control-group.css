@@ -2,14 +2,16 @@
   display: flex;
   flex-wrap: wrap;
   margin-top: 1rem;
-  position: relative;
-}
-
-.label {
-  position: absolute;
 }
 
 .control-group > * {
   flex: 1 0 100%;
+}
+
+.control-group > input {
   padding: 0.5rem;
+}
+
+.control-group > label {
+  margin-bottom: 0.5rem;
 }

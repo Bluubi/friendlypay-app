@@ -1,5 +1,5 @@
 import "./control-group.css";
-import { CONTROL } from "./control-type.ts";
+import { CONTROL } from "../control-type.ts";
 
 export const ControlGroup = ({ controls }: { controls: CONTROL[] }) => {
   return (

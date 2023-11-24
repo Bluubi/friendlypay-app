@@ -1,0 +1,46 @@
+.primary {
+  padding: 0.5rem;
+
+  color: rgb(15, 23, 42);
+  text-decoration: none;
+
+  border: 1px solid var(--bg-dark);
+  border-radius: 0.4rem;
+
+  font-weight: 600;
+
+  transition: background-color 0.5s;
+}
+
+.primary:hover {
+  background-color: var(--bg-dark);
+}
+
+.secondary {
+  position: relative;
+  margin: 1rem;
+  text-decoration: none;
+  font-weight: 600;
+
+  color: rgb(15, 23, 42);
+
+  padding-left: 0.5rem;
+}
+
+.secondary::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--bg-dark);
+  border-left: 0;
+  border-top: 0;
+
+  bottom: 4px;
+  left: 0;
+
+  transform: rotate(135deg);
+}
+
+.secondary:target {
+}
