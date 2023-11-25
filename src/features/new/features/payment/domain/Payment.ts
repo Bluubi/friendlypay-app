@@ -1,7 +1,6 @@
 export type Payment = {
   activity: string;
   amount: number;
-  description?: string;
 };
 
 export type Owner = string;
@@ -19,7 +18,6 @@ export type Payments = {
     {
       activity: string;
       amount: number;
-      description?: string;
     },
   ];
 };

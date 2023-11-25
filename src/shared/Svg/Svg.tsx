@@ -1,12 +1,14 @@
 import { ComponentProps } from "react";
 import "./svg.css";
 
-type SvgProps = ComponentProps<"img">;
+type SvgProps = ComponentProps<"img"> & {
+    width?: string
+}
 
-export const Svg = ({ src, alt }: SvgProps) => {
+export const Svg = ({ src, alt, width }: SvgProps) => {
   return (
     <div className={"svg"}>
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} width={width} />
     </div>
   );
 };

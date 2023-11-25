@@ -15,16 +15,21 @@ export class PaymentLocalStorageRepository implements PaymentRepository {
   save({ owner, ...payment }: StoredPayment): boolean {
     const store = getStore(this.dataName);
     if (!store) {
-      createPayments(this.dataName, { owner, ...payment });
+      const timestamp = new Date();
+      createPayments(this.dataName, { owner, ...payment, timestamp });
       return true;
     }
 
     if (hasOwnerAlreadyStoredPayments(store, owner)) {
       const { payments } = store[owner];
+      payment.timestamp = new Date();
+
       payments.push(payment);
       storePayment(this.dataName, store, owner, [...payments]);
       return true;
     } else {
+      payment.timestamp = new Date();
+
       const payments = [payment];
       storePayment(this.dataName, store, owner, payments);
       return true;

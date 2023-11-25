@@ -1,20 +1,22 @@
-import { Button } from "../../../../../shared/Button/Button.tsx";
+import {Button} from "../../../../../../../shared/Button/Button.tsx";
 import styles from "./new-payment-page.module.css";
-import {
-  ControlGroup,
-  getControlInput,
-} from "../../../../../shared/Form/ui/ControlGroup.tsx";
-import { PAYMENT_CONTROLS } from "../domain/payment-controls.ts";
+import {ControlGroup, getControlInput,} from "../../../../../../../shared/Form/ui/ControlGroup.tsx";
+import {PAYMENT_CONTROLS} from "../../../domain/payment-controls.ts";
 import * as REACT from "react";
-import { container } from "tsyringe";
-import { PaymentRepository } from "../domain/payment-repository.ts";
+import {useRef} from "react";
+import {container} from "tsyringe";
+import {PaymentRepository} from "../../../domain/payment-repository.ts";
 import "./new-payment-page.module.css";
-import Svg from "../../../../../shared/Svg/Svg.tsx";
-import SVG from "../../../../../core/svg.ts";
-import { Outlet } from "react-router-dom";
+import Svg from "../../../../../../../shared/Svg/Svg.tsx";
+import SVG from "../../../../../../../core/svg.ts";
+import {Outlet} from "react-router-dom";
+import {Snackbar} from "../../../../../../../shared/Snackbar/Snackbar.tsx";
 
 export const NewPaymentPage = () => {
-  const newPayment = (event: REACT.FormEvent) => {
+
+    const ref = useRef(null);
+
+    const newPayment = (event: REACT.FormEvent) => {
     event.preventDefault();
 
     const savePaymentCmd =
@@ -27,6 +29,7 @@ export const NewPaymentPage = () => {
     };
 
     savePaymentCmd.save(payment);
+    console.log(ref.current);
   };
 
   return (
@@ -45,6 +48,9 @@ export const NewPaymentPage = () => {
       </form>
       <Outlet />
       <div className={styles.modal}></div>
+        <Snackbar ref={ref}>
+            <p>Your payment has been successfully registered</p>
+        </Snackbar>
     </div>
   );
 };

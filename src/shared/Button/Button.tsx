@@ -1,4 +1,4 @@
-import styles from "./Button.module.css";
+import styles from "./button.module.css";
 import { ComponentProps } from "react";
 
 type ButtonProps = ComponentProps<"button"> & {
