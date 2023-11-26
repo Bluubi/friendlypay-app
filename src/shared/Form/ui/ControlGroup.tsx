@@ -14,6 +14,7 @@ export const ControlGroup = ({ controls }: { controls: CONTROL[] }) => {
               </label>
               <input
                 id={id}
+                data-testid={id}
                 name={id}
                 type={String(type)}
                 required={required}

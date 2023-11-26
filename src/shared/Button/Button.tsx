@@ -2,23 +2,13 @@ import styles from "./button.module.css";
 import { ComponentProps } from "react";
 
 type ButtonProps = ComponentProps<"button"> & {
-  action?: () => void;
+  action: () => void;
 };
 
 export const Button = ({ action, type, ...props }: ButtonProps) => {
   return (
-    <>
-      {action === undefined ? (
-        <button className={styles.primary} type={type}>
-          {" "}
+        <button data-testid={"submit"} className={styles.primary} type={type} onClick={action}>
           {props.children}
         </button>
-      ) : (
-        <button className={styles.primary} type={type} onClick={action}>
-          {" "}
-          {props.children}{" "}
-        </button>
-      )}{" "}
-    </>
   );
 };

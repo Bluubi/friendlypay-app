@@ -2,7 +2,7 @@ import { Presentation } from "../new/features/presentation/ui/Presentation.tsx";
 import Svg from "../../shared/Svg/Svg.tsx";
 import SVG from "../../core/svg.ts";
 
-export const HomePage = () => {
+const HomePage = () => {
   return (
     <>
       <section className={"container"}>
@@ -12,3 +12,5 @@ export const HomePage = () => {
     </>
   );
 };
+
+export default HomePage;
