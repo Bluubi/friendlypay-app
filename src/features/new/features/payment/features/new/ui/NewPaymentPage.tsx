@@ -12,8 +12,11 @@ import "./new-payment-page.module.css";
 import Svg from "../../../../../../../shared/Svg/Svg.tsx";
 import SVG from "../../../../../../../core/svg.ts";
 import { Outlet } from "react-router-dom";
+import {useRef} from "react";
 
 export const NewPaymentPage = () => {
+
+    const formRef = useRef<HTMLFormElement>();
   const newPayment = (event: REACT.FormEvent) => {
     event.preventDefault();
 
@@ -27,6 +30,7 @@ export const NewPaymentPage = () => {
     };
 
     savePaymentCmd.save(payment);
+    formRef.current?.reset();
   };
 
   return (
@@ -37,7 +41,7 @@ export const NewPaymentPage = () => {
         Introduce the data related with your payment
       </p>
       <Svg src={SVG.LARRY_WITH_FRIEND} alt={""} />
-      <form className={styles.form} onSubmit={(event) => newPayment(event)}>
+      <form className={styles.form} onSubmit={(event) => newPayment(event)} ref={formRef}>
         <ControlGroup controls={PAYMENT_CONTROLS}></ControlGroup>
         <Button action={() => newPayment} type={"submit"}>
           <span> Create your payment </span>
