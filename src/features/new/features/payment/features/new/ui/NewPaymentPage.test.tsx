@@ -1,14 +1,12 @@
 import "reflect-metadata";
-import '../../../../../../../core/di.ts'
-import {describe, it} from "vitest";
-import {render, screen} from "@testing-library/react";
+import "../../../../../../../core/di.ts";
+import { describe, it } from "vitest";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import {NewPaymentPage} from "./NewPaymentPage.tsx";
-
+import { NewPaymentPage } from "./NewPaymentPage.tsx";
 
 describe("<NewPaymentPage />", () => {
   it("should render", async () => {
-
     render(<NewPaymentPage />);
 
     const ownerInput = await screen.findByTestId("owner");
