@@ -1,18 +1,20 @@
-import {Button} from "../../../../../../../shared/Button/Button.tsx";
+import { Button } from "../../../../../../../shared/Button/Button.tsx";
 import styles from "./new-payment-page.module.css";
-import {ControlGroup, getControlInput,} from "../../../../../../../shared/Form/ui/ControlGroup.tsx";
-import {PAYMENT_CONTROLS} from "../../../domain/payment-controls.ts";
+import {
+  ControlGroup,
+  getControlInput,
+} from "../../../../../../../shared/Form/ui/ControlGroup.tsx";
+import { PAYMENT_CONTROLS } from "../../../domain/payment-controls.ts";
 import * as REACT from "react";
-import {container} from "tsyringe";
-import {PaymentRepository} from "../../../domain/payment-repository.ts";
+import { container } from "tsyringe";
+import { PaymentRepository } from "../../../domain/payment-repository.ts";
 import "./new-payment-page.module.css";
 import Svg from "../../../../../../../shared/Svg/Svg.tsx";
 import SVG from "../../../../../../../core/svg.ts";
-import {Outlet} from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 export const NewPaymentPage = () => {
-
-    const newPayment = (event: REACT.FormEvent) => {
+  const newPayment = (event: REACT.FormEvent) => {
     event.preventDefault();
 
     const savePaymentCmd =

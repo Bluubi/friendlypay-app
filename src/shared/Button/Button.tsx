@@ -7,8 +7,13 @@ type ButtonProps = ComponentProps<"button"> & {
 
 export const Button = ({ action, type, ...props }: ButtonProps) => {
   return (
-        <button data-testid={"submit"} className={styles.primary} type={type} onClick={action}>
-          {props.children}
-        </button>
+    <button
+      data-testid={"submit"}
+      className={styles.primary}
+      type={type}
+      onClick={action}
+    >
+      {props.children}
+    </button>
   );
 };
