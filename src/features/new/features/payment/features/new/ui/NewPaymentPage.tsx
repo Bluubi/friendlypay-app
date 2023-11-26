@@ -3,18 +3,14 @@ import styles from "./new-payment-page.module.css";
 import {ControlGroup, getControlInput,} from "../../../../../../../shared/Form/ui/ControlGroup.tsx";
 import {PAYMENT_CONTROLS} from "../../../domain/payment-controls.ts";
 import * as REACT from "react";
-import {useRef} from "react";
 import {container} from "tsyringe";
 import {PaymentRepository} from "../../../domain/payment-repository.ts";
 import "./new-payment-page.module.css";
 import Svg from "../../../../../../../shared/Svg/Svg.tsx";
 import SVG from "../../../../../../../core/svg.ts";
 import {Outlet} from "react-router-dom";
-import {Snackbar} from "../../../../../../../shared/Snackbar/Snackbar.tsx";
 
 export const NewPaymentPage = () => {
-
-    const ref = useRef(null);
 
     const newPayment = (event: REACT.FormEvent) => {
     event.preventDefault();
@@ -29,7 +25,6 @@ export const NewPaymentPage = () => {
     };
 
     savePaymentCmd.save(payment);
-    console.log(ref.current);
   };
 
   return (
@@ -48,9 +43,6 @@ export const NewPaymentPage = () => {
       </form>
       <Outlet />
       <div className={styles.modal}></div>
-        <Snackbar ref={ref}>
-            <p>Your payment has been successfully registered</p>
-        </Snackbar>
     </div>
   );
 };
